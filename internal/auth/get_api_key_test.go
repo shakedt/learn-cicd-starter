@@ -38,6 +38,7 @@ func TestGetAPIKey(t *testing.T) {
 
 			gotKey, err := GetAPIKey(headers)
 
+			t.Errof("intintonal fiail")
 			if gotKey != tt.wantKey {
 				t.Errorf("GetAPIKey() key = %q, want %q", gotKey, tt.wantKey)
 			}

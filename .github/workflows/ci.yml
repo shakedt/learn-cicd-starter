@@ -18,6 +18,9 @@ jobs:
         uses: actions/setup-go@v6
         with:
           go-version: "1.26.0"
+      
+      - name: Run unitTests
+        run: go teset ./...
 
       - name: Force Failure
         run: exit 0

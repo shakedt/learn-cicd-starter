@@ -15,9 +15,14 @@ jobs:
 
       - name: Set up Go
         uses: actions/setup-go@v6
+        with:
+          go-version: "1.26.0"
+
  
       - name: style check
-        run: test -z $(go fmt ./...)
+        run: |
+          go fmt ./...
+          git diff --exit-code
 
   tests:  
     name: Tests
@@ -38,4 +43,3 @@ jobs:
 
       - name: Force Failure
         run: exit 0
-

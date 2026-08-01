@@ -20,9 +20,7 @@ jobs:
 
  
       - name: style check
-        run: |
-          go fmt ./...
-          git diff --exit-code
+        run: test -z $(go fmt ./...)
 
   tests:  
     name: Tests

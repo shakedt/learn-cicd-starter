@@ -4,16 +4,16 @@ on:
 jobs: 
   deploy:
     name: Deploy application
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-  steps:
-    - name: Check out code
-      uses: actions/checkout@v6
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v6
       
-    - name: set up go 
-      uses: actions/setup-go@v6
-      with: 
-        go-version: "1.26.0"
+      - name: set up go 
+        uses: actions/setup-go@v6
+        with: 
+          go-version: "1.26.0"
 
-    - name: Build application
-      run: ./scripts/buildprod.sh
+      - name: Build application
+        run: ./scripts/buildprod.sh

@@ -28,11 +28,6 @@ jobs:
       - name: static check
         run: staticcheck ./...
 
-      - name: Install gosec
-        run: go install github.com/securego/gosec/v2/cmd/gosec@latest
-
-      - name: run go sec
-        run: gosec ./...
   tests:  
     name: Tests
     runs-on: ubuntu-latest
@@ -49,6 +44,12 @@ jobs:
       
       - name: Run unitTests
         run: go test  -cover ./...
+
+      - name: Install gosec
+        run: go install github.com/securego/gosec/v2/cmd/gosec@latest
+
+      - name: run gosec
+        run: gosec ./...
 
       - name: Force Failure
         run: exit 0

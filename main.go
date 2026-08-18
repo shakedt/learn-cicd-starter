@@ -55,6 +55,7 @@ func main() {
 		log.Println("Connected to database!")
 	}
 
+	// Configure the HTTP router before registering application endpoints.
 	router := chi.NewRouter()
 
 	router.Use(cors.Handler(cors.Options{
